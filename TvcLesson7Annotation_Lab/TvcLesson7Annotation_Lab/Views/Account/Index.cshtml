@@ -1,0 +1,48 @@
+﻿@model IEnumerable<TvcLesson7Annotation_Lab.Models.Account>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Họ và tên</th>
+            <th>Địa chỉ Email</th>
+            <th>Số điện thoại</th>
+            <th>Địa chỉ thường trú</th>
+            <th>Ảnh đại diện</th>
+            <th>Ngày sinh</th>
+            <th>Mật khẩu</th>
+            <th>Link Facebook cá nhân</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+                <td>@item.Phone</td>
+                <td>@item.Address</td>
+                <td>@item.Avatar</td>
+                <td>@item.Birthday</td>
+                <td>@item.Password</td>
+                <td>@item.Facebook</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
