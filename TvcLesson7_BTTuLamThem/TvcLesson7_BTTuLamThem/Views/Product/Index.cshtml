@@ -1,0 +1,27 @@
+﻿@model List<TvcLesson7_BTTuLamThem.Models.Product>
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+    var cats = (List<TvcLesson7_BTTuLamThem.Models.Category>)ViewBag.Categories;
+}
+<h2>Danh sách sản phẩm</h2>
+<a asp-action="Create" class="btn btn-success mb-3">+ Thêm mới</a>
+
+<table class="table table-bordered">
+    <tr><th>Id</th><th>Ảnh</th><th>Tên</th><th>Danh mục</th><th>Giá</th><th>Giá KM</th><th></th></tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td><img src="~/products/@p.Image" width="60" /></td>
+            <td>@p.Name</td>
+            <td>@cats.FirstOrDefault(c => c.Id == p.CategoryId)?.Name</td>
+            <td>@p.Price?.ToString("N0")</td>
+            <td>@p.SalePrice?.ToString("N0")</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@p.Id">Chi tiết</a> |
+                <a asp-action="Edit" asp-route-id="@p.Id">Sửa</a> |
+                <a asp-action="Delete" asp-route-id="@p.Id">Xóa</a>
+            </td>
+        </tr>
+    }
+</table>
