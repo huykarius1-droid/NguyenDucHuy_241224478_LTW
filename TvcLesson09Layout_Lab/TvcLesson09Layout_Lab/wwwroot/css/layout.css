@@ -1,0 +1,417 @@
+﻿/* Reset & Căn chỉnh chung */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #474747;
+    background: #fff;
+    line-height: 1.6;
+}
+
+.hoc {
+    display: block;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 90%;
+}
+
+/* Clearfix bắt buộc cho cả .clear và .group để không bị nhảy lộn xộn */
+.clear::after, .group::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.fl_left {
+    float: left;
+}
+
+.fl_right {
+    float: right;
+}
+
+.nospace {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#topbar .nospace li, #quickinfo .nospace li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* Các dải wrapper màu sắc */
+.wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.row0 {
+    background-color: #0b1a28;
+    color: #fff;
+    padding: 12px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+    .row0 a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+.row1 {
+    background-color: #fff;
+    padding: 25px 0;
+}
+
+    .row1 h1 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 800;
+        font-family: "Georgia", serif;
+        letter-spacing: 1px;
+    }
+
+        .row1 h1 a {
+            color: #222;
+            text-decoration: none;
+        }
+
+    .row1 p {
+        margin: 0;
+        color: #888;
+        font-size: 13px;
+        font-style: italic;
+    }
+
+.row2 {
+    background-color: #6892b5;
+}
+
+.row3 {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.row4 {
+    background-color: #092c4c;
+    color: #a5b7c6;
+    padding: 60px 0;
+}
+
+.row5 {
+    background-color: #051b30;
+    color: #6f8291;
+    padding: 20px 0;
+    font-size: 13px;
+}
+
+/* Header Quick Info & Language */
+#quickinfo li {
+    display: inline-block;
+    margin-left: 25px;
+    font-size: 14px;
+    color: #333;
+}
+
+.lang-box {
+    display: inline-block;
+    margin-left: 25px;
+    vertical-align: middle;
+}
+
+    .lang-box select {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fafafa;
+        color: #555;
+    }
+
+/* Menu chính & Dropdown */
+#mainav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#mainav > ul > li {
+    float: left;
+    position: relative;
+}
+
+    #mainav > ul > li > a {
+        display: block;
+        padding: 16px 20px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    #mainav > ul > li.active > a, #mainav > ul > li:hover > a {
+        background-color: #557d9f;
+    }
+
+#mainav li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    background-color: #557d9f;
+    min-width: 180px;
+    padding: 0;
+}
+
+    #mainav li ul li {
+        display: block;
+        float: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+        #mainav li ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+#mainav li:hover > ul {
+    display: block;
+}
+
+/* Banner chuẩn theo ảnh mẫu: Căn trái + Nền xám đen có vân chéo + Small-caps */
+.bgded {
+    background-color: #1a1a1a;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), repeating-linear-gradient(-45deg, #222222 0px, #222222 25px, #1a1a1a 25px, #1a1a1a 50px);
+    color: #ffffff;
+    text-align: left;
+    padding: 120px 0;
+}
+
+#pageintro article {
+    max-width: 65%;
+}
+
+    /* Dòng 1: AMET NUNC ET ACCUMSAN BLANDIT */
+    #pageintro article p:first-of-type {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+
+    /* Dòng 2: METUS PURUS PHARETRA SIT (Kiểu chữ Small-Caps có chân) */
+    #pageintro article h3.heading {
+        font-size: 44px;
+        margin: 0 0 18px 0;
+        font-family: "Georgia", "Times New Roman", serif;
+        font-variant: small-caps;
+        font-weight: normal;
+        letter-spacing: 1px;
+        color: #ffffff;
+    }
+
+    /* Dòng 3: Tempor praesent eu orci... (Chữ thường, nhỏ gọn) */
+    #pageintro article p:last-of-type {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: normal;
+        text-transform: none;
+        color: #e0e0e0;
+    }
+
+    /* Nút bấm xanh nhạt bo góc trên Banner */
+    #pageintro article footer {
+        margin-top: 35px;
+    }
+
+    #pageintro article .btn {
+        background-color: #8fa8c8;
+        color: #ffffff !important;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+/* Nút bấm chung (.btn) */
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background-color: #82a4c7;
+    color: #fff !important;
+    text-decoration: none !important;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+    .btn:hover {
+        background-color: #557d9f;
+    }
+
+/* Hệ thống chia lưới 3 cột & 4 cột chuẩn xác */
+.sectiontitle {
+    text-align: center;
+    margin-bottom: 45px;
+    clear: both;
+}
+
+    .sectiontitle .heading {
+        font-size: 20px;
+        margin: 0 0 8px 0;
+        text-transform: uppercase;
+        font-family: "Georgia", serif;
+        color: #222;
+    }
+
+    .sectiontitle p {
+        margin: 0;
+        font-size: 14px;
+        color: #777;
+    }
+
+.one_third {
+    float: left;
+    width: 31%;
+    margin-left: 3.5%;
+    margin-right: 0 !important;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+    .one_third.first, .overview .one_third:nth-child(3n+1) {
+        margin-left: 0;
+        clear: left;
+    }
+
+/* Khung Card cho 3 khối dịch vụ trên (#introblocks) giống hệt ảnh mẫu */
+#introblocks article {
+    background: #ffffff;
+    padding: 40px 25px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    border-radius: 4px;
+}
+
+    #introblocks article > a {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        line-height: 64px;
+        border-radius: 50%;
+        border: 1px solid #e0e6ed;
+        color: #82a4c7;
+        font-size: 24px;
+        margin-bottom: 20px;
+        transition: 0.3s;
+    }
+
+#introblocks li:nth-child(2) article > a {
+    background-color: #82a4c7;
+    color: #ffffff;
+}
+
+#introblocks article .heading {
+    font-family: "Georgia", serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    color: #222;
+}
+
+#introblocks article p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Đường kẻ ngăn cách */
+.btmspace-80 {
+    margin: 60px 0;
+    border: 0;
+    border-top: 1px solid #eaeaea;
+    clear: both;
+}
+
+/* Khối ảnh 3 cột bên dưới (.overview) */
+.overview figure {
+    margin: 0;
+    position: relative;
+}
+
+    .overview figure img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: brightness(0.45);
+    }
+
+.overview figcaption {
+    padding: 15px 10px;
+}
+
+    .overview figcaption .heading {
+        font-family: "Georgia", serif;
+        font-size: 15px;
+        text-transform: uppercase;
+        margin: 0 0 8px 0;
+        color: #222;
+    }
+
+    .overview figcaption p {
+        font-size: 13px;
+        color: #666;
+        margin: 0;
+    }
+
+/* Footer 4 cột */
+.one_quarter {
+    float: left;
+    width: 22%;
+    margin-left: 4%;
+    margin-right: 0 !important;
+}
+
+    .one_quarter.first {
+        margin-left: 0;
+    }
+
+    .one_quarter .heading {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-family: "Georgia", serif;
+        margin-bottom: 25px;
+    }
+
+.linklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .linklist li {
+        display: block;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        font-size: 13px;
+    }
+
+        .linklist li a {
+            color: #82a4c7;
+            text-decoration: none;
+        }

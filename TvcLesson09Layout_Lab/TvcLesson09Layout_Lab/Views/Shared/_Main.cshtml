@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>@ViewData["Title"] - Bistup</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Nhúng CSS của template -->
+    <link href="~/css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    @RenderSection("Css", required: false)
+</head>
+<body id="top">
+    <!-- BEGIN HEADER -->
+    <!-- Topbar -->
+    <div class="wrapper row0">
+        <div id="topbar" class="hoc clear">
+            <div class="fl_left">
+                <ul class="nospace">
+                    <li><a href="#"><i class="fas fa-home"></i></a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">REGISTER</a></li>
+                </ul>
+            </div>
+            <div class="fl_right">
+                <ul class="nospace">
+                    <li><i class="fas fa-phone"></i> +00 (123) 456 7890</li>
+                    <li><i class="fas fa-envelope"></i> INFO@DOMAIN.COM</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Khối logo & Giờ làm việc + Ngôn ngữ -->
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <div id="logo" class="fl_left">
+                <h1><a asp-controller="Home" asp-action="Index">Bistup</a></h1>
+                <p>vestibulum amet</p>
+            </div>
+            <div id="quickinfo" class="fl_right">
+                <ul class="nospace clear" style="display: inline-block; vertical-align: middle;">
+                    <li><strong><i class="fas fa-phone"></i> Call Us:</strong> +00 (123) 456 7890</li>
+                    <li><strong><i class="far fa-clock"></i> Mon. - Sat.:</strong> 08.00am - 18.00pm</li>
+                </ul>
+                <div class="lang-box">
+                    <select>
+                        <option>Language</option>
+                        <option>English</option>
+                        <option>Tiếng Việt</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN MENU -->
+    <div class="wrapper row2">
+        <nav id="mainav" class="hoc clear">
+            <ul class="clear">
+                <li class="active"><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                <li>
+                    <a class="drop" href="#">DROPDOWN</a>
+                    <ul>
+                        <li><a href="#">Level 2</a></li>
+                        <li><a href="#">Level 2 + Drop</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">LINK TEXT</a></li>
+                <li><a href="#">LINK TEXT</a></li>
+                <li><a href="#">LINK TEXT</a></li>
+                <li><a href="#">LONG LINK TEXT</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- END MENU -->
+    <!-- VỊ TRÍ CHÈN NỘI DUNG TỪNG VIEW (BANNER + NỘI DUNG CHÍNH) -->
+    @RenderBody()
+
+    <!-- BEGIN FOOTER -->
+    <div class="wrapper row4">
+        <footer id="footer" class="hoc clear">
+            <div class="one_quarter first">
+                <h6 class="heading">Nulla Ullamcorper</h6>
+                <ul class="nospace linklist">
+                    <li><i class="fas fa-map-marker-alt"></i> Street Name & Number, Town, Postcode/Zip</li>
+                    <li><i class="fas fa-phone"></i> +00 (123) 456 7890</li>
+                    <li><i class="fas fa-envelope"></i> info@domain.com</li>
+                </ul>
+            </div>
+            <div class="one_quarter">
+                <h6 class="heading">Dignissim Nibh Ut</h6>
+                <ul class="nospace linklist">
+                    <li><a href="#">Natoque penatibus et magnis</a></li>
+                    <li><a href="#">Dis parturient montes</a></li>
+                    <li><a href="#">Nascetur ridiculus mus</a></li>
+                    <li><a href="#">Vestibulum tincidunt nisi</a></li>
+                    <li><a href="#">Sed eleifend scelerisque</a></li>
+                </ul>
+            </div>
+            <div class="one_quarter">
+                <h6 class="heading">Vestibulum Cras Placerat</h6>
+                <ul class="nospace linklist">
+                    <li><a href="#">Maecenas vestibulum molestie</a></li>
+                    <li><a href="#">Arcu cras sed tincidunt</a></li>
+                    <li><a href="#">Enim maecenas sed mi dictum</a></li>
+                    <li><a href="#">Dolor laoreet fringilla</a></li>
+                    <li><a href="#">Augue curabitur lobortis</a></li>
+                </ul>
+            </div>
+            <div class="one_quarter">
+                <h6 class="heading">Vulputate Cum Sociis</h6>
+                <p class="nospace btmspace-15">Diam nulla id condimentum magna scelerisque ac suspendisse viverra est purus.</p>
+                <form method="post" action="#">
+                    <fieldset>
+                        <legend>Newsletter:</legend>
+                        <input class="btmspace-15" type="text" placeholder="Name" style="width: 100%; padding: 5px; margin-bottom: 8px;">
+                        <input class="btmspace-15" type="text" placeholder="Email" style="width: 100%; padding: 5px; margin-bottom: 8px;">
+                        <button type="button" style="padding: 6px 12px; background: #6d9bc3; color: white; border: none;">SUBMIT</button>
+                    </fieldset>
+                </form>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Copyright -->
+    <div class="wrapper row5">
+        <div id="copyright" class="hoc clear">
+            <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#" style="color: #6f8291;">Domain Name</a></p>
+            <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" style="color: #6f8291;">OS Templates</a></p>
+        </div>
+    </div>
+    <!-- END FOOTER -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
